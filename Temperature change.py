@@ -12,7 +12,6 @@ df = pd.read_csv('TUM00017292.csv')
 df = df[["TUM00017292","19630122","TMAX","122"]]
 df.rename({"TUM00017292":"ID","19630122":"Date","TMAX":"Element","122":"Data_Value"},axis=1,inplace=True)
 df["Date"] = pd.to_datetime(df["Date"],format="%Y%m%d")
-#print(df)
 
 df["Data_Value"] = df["Data_Value"]/10
 df1 = df[df["Element"] == "TMAX"]
@@ -89,13 +88,10 @@ plt.title("Temperature (°C) Changes in Muğla, Turkey")
 plt.legend()
 
 verts = np.vstack([p.vertices for p in polygon.get_paths()])
-
 ymin, ymax = verts[:, 1].min(), verts[:, 1].max()
-y2 = dfr2["Data_Value"]
-y1 = dfr1["Data_Value"]
 
 imdata = np.array([np.interp(np.linspace(ymin, ymax, 1000), [y1i, y2i], np.arange(2))
-                   for y1i, y2i in zip(gf(y2, 4, mode='nearest'),gf(y1, 4, mode='nearest'))]).T
+                   for y1i, y2i in zip(gf(dfr2["Data_Value"], 4, mode='nearest'),gf(dfr1["Data_Value"], 4, mode='nearest'))]).T
 
 gradient = plt.imshow(imdata, cmap='turbo', aspect='auto', origin='lower',
                       extent=[x.min(), x.max(), ymin, ymax])
