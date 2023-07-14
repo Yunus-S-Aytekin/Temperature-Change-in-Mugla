@@ -4,7 +4,7 @@
 
 ### Data Source:
 
-- This data was taken from TÜİK(Turkish Statistical Institute).
+- This data was taken from Global Historical Climatology Network daily (GHCNd).
 - Here is the [link](https://biruni.tuik.gov.tr/bolgeselistatistik/anaSayfa.do?dil=eng)
 
 ### About The Image:
