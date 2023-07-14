@@ -4,7 +4,7 @@
 
 ### Data Source:
 
-- This data was taken from Global Historical Climatology Network daily (GHCNd).
+- This data is taken from Global Historical Climatology Network daily (GHCNd).
 - Here is the [link](https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily)
 
 ### About The Image:
